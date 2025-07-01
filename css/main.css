@@ -1,0 +1,922 @@
+/* Ensure these imports are at the top of your CSS file */
+@import url("https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Battambang:wght@100;300;400;700;900&family=Kaisei+Tokumin&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+
+
+* {
+  font-family: "Open Sans", "Lato", sans-serif;
+  font-style: normal;
+}
+
+:root {
+  --text-pink: #d51a6b;
+  --text-pink-hover: #ae0a53;
+  --text-dark: #09011e;
+  --clr-pink: #d51a6b;
+  --bg-dark: #060113;
+  --bg-gray: #dbdbdb;
+  --bg-light-gray: rgba(255, 255, 255, .5) !important;
+  --border-pink: #d51a6b;
+}
+
+.clr-pink{
+  color: var(--text-pink);
+}
+.bg {
+  background-color:  #e1e8f0;
+  /* border: 1px solid #eee; */
+}
+.bg-gray{
+  background: var(--bg-gray);
+}
+
+.card {
+  border: 1px solid #eee;
+}
+.card:hover{
+  background-color: whitesmoke;
+}
+/* Product Container */
+
+.product-container {
+  font-family: "Open Sans", "Lato", sans-serif;
+  font-style: normal;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* min-height: 100vh; */
+}
+
+
+.main-content {
+  width: 100%;
+  max-width: 1200px;
+  padding: 2px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.filters-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 15px; /* Space between filter elements */
+}
+
+.filters-section h2 {
+  font-size: 1.7rem;
+  /* font-weight: 700; */
+  /* color: #333; */
+}
+
+.category-dropdown-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.category-dropdown-container label {
+  font-weight: 600;
+  color: #555;
+}
+
+.category-dropdown {
+  padding: 3px 5px;
+  /* border: 1px solid #ccc; */
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: 0.3s ease;
+  font-family: sans-serif;
+}
+
+.category-dropdown:focus {
+  border-color: #007bff;
+}
+select{
+  color: #3498db;
+}
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  justify-content: center; /* This will center the grid items when there's extra space */
+  padding-left: 14%;
+  padding-right: 14%;
+  padding-top: 15px;
+}
+
+.product-card {
+  background-color: white;
+  border: 1px solid #eee;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  background-color: whitesmoke;
+}
+
+.product-card img {
+  max-width: 100%;
+  height: auto; /* Fixed height for product images */
+  object-fit: contain; /* Ensure image fits without cropping */
+  margin-bottom: 15px;
+  border-radius: 6px;
+}
+
+.product-card h3 {
+  font-size: 1rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: #333;
+
+}
+
+.product-card p {
+  font-size: 1.2rem;
+  /* font-weight: 700; */
+  color: crimson;
+  margin-bottom: 15px;
+  text-decoration: none;
+}
+button{
+  background-color: white;
+}
+.product-card a {
+    text-decoration: none;
+}
+.add-to-cart-btn {
+  display: inline;
+  padding: 8px 18px;
+  /* border-color: #007bff; */
+  /* background-color: #28a745; */
+  /* border-color: #28a745; */
+  color: #28a745 ;
+  text-decoration: none;
+  border: #28a745 1px solid;
+  border-radius: 10px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #218838;
+  color: white;
+}
+
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .filters-section {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+  .filters-section h2 {
+      margin-bottom: 15px;
+  }
+}
+
+
+header {
+  background: url("../images/home.jpg") center/cover no-repeat;
+  background-attachment: fixed;
+}
+.banner-about {
+  background: url("../images/about.jpg") center/cover no-repeat;
+  background-attachment: fixed;
+  height: 60vh;
+}
+.banner-blog {
+  background: url("../images/blogbanner.jpg") top/cover no-repeat;
+  background-attachment: fixed;
+  height: 40vh;
+}
+.banner-contact {
+  background: url("../images/contact.jpg") top/cover no-repeat;
+  /* background-attachment: fixed; */
+  height: 50vh;
+}
+.offer{
+  background: url("../images/offerbanner.jpg") top/cover no-repeat;
+  background-attachment: fixed;
+  min-height: 50vh;
+  position: relative;
+}
+.banner-product{
+  background: url("../images/product.jpg") top/cover no-repeat;
+  background-attachment: fixed;
+  height: 60vh;
+}
+h4 {
+  font: bold;
+  color: #de1b5c;
+}
+.slide-title{
+  margin-top: 0;
+
+}
+
+.nav-tabs .nav-item .nav-link{
+  border: 1px solid #ccc !important;
+  color:#151517 !important;
+  margin-right: 10px !important;
+  margin-bottom: 10px;
+}
+.nav-tabs .nav-link.active{
+  background-color: #5baaff !important;
+  color:#eee !important;
+}
+.fa-star{
+  color: var(--text-pink);
+}
+.tab-pane {
+  animation: fadeIn 0.5s ease-in-out;
+}
+.sale{
+  width: 37px;
+  height: 35px;
+  background-color: var(--clr-pink);
+  margin: 8px;
+  line-height: 20px;
+
+}
+.img-wrapper {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.inner-img {
+  transition: 0.1s;
+}
+.inner-img:hover {
+  transform: scale(1.1);
+}
+
+.box-offer {
+  position: absolute;
+  top: 50%;
+  left: 20%;
+  transform: translate(-50%, -50%);
+}
+.img-popular{
+  width: 100px;
+}
+.space {
+  height: 80px;
+}
+.cursor :hover{
+  color: whitesmoke;
+}
+.footer-color{
+  color: var(--bg-light-gray);
+}
+.footer-link{
+  padding: 20px;
+}
+.footer-link li{
+  list-style-type: circle;
+  color: var(--bg-light-gray);
+  line-height: 2rem;
+}
+.footer-link li a{
+  text-decoration: none;
+  color:var(--bg-light-gray);
+}
+.footer-link li a:hover{
+  color:#f2eff0;
+}
+.footer-icon a{
+  color:var(--bg-light-gray);
+}
+.footer-icon a:hover{
+  color:#1b5fde;
+}
+/* Animation keyframes */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: translateY(-10px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  .slide-title{
+    margin-top: 60%;
+  }
+  .box-offer {
+    left: 35%;
+  }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+  .slide-title{
+    margin-top: 10%;
+  }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  .slide-title{
+    margin-top: 50%;
+  }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {} /* This media query is empty. We will add styles here */
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  .slide-title{
+    margin-top: 20%;
+  }
+}
+
+.old-price::before {
+  content: "$50.00";
+  text-decoration: line-through;
+  color: #333;
+  font-weight: normal;
+  margin-right: 8px;
+}
+
+.new-price::before {
+  content: "$30.00";
+  color: red;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.color {
+  display: flex;
+  margin: 0;
+}
+.navbar-nav {
+  font-weight: bold;
+}
+.pro  {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+.dis {
+  font-weight: var(--border-pink);
+  font-size: 2rem;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  width: 400px; /* Keep this width if you want a fixed size search bar */
+  border: 1.5px solid #ccc;
+  border-radius: 25px;
+  background-color: #fff;
+  margin-right: 20px; /* Bootstrap's me-3 now handles this */
+  margin-left: 20px; /* Bootstrap's me-auto on ul pushes search to right */
+}
+
+.search-container input {
+  border: none;
+  outline: none;
+  flex: 1;
+  padding: 6px 6px;
+  margin-left: 10px;
+  font-size: 14px;
+  border-radius: 25px;
+}
+
+.search-container button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  color: #999;
+  padding: 2px;
+  margin-left: 5px;
+  margin-right: 15px;
+}
+
+.order{
+  /* display: flex; REMOVED because parent custom-nav-icons now handles this */
+  /* align-items: center; REMOVED because parent custom-nav-icons now handles this */
+  width: auto; /* CRITICAL FIX: Changed from 0 to auto */
+  background: none;
+  cursor: pointer;
+  color: rgb(69, 69, 69);
+  gap: 1rem; /* This will create spacing between the cart and heart icons */
+  display: flex; /* Added back to make gap work for its direct children */
+  align-items: center; /* Added back for its direct children */
+}
+/* Style for all nav icons (cart, heart, user) */
+.nav-icon-link {
+    color: rgb(69, 69, 69); /* Default color for icons */
+    font-size: 24px; /* Default size for icons */
+    text-decoration: none; /* Remove underline */
+    display: flex; /* Use flex to center icon within its link */
+    align-items: center; /* Center vertically */
+    justify-content: center; /* Center horizontally */
+    padding: 0 8px; /* Add some padding around the icon to make it more clickable */
+}
+
+.nav-icon-link:hover {
+    color: #007bff; /* Example hover color */
+}
+
+
+a {
+  color: black;
+  text-decoration: none;
+}
+.login {
+  background-color: #e1e8f0;
+  color: rgb(69, 69, 69);
+  padding: 2px 5px;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease, transform 0.1s ease, box-shadow 0.3s ease;
+  margin-right: 15px; /* Bootstrap's me-3 on parent will override this, but good to have as fallback */
+  cursor: pointer;
+  margin-left: 15px;
+}
+
+.dot-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    cursor: pointer;
+    margin-left: 5px; /* Add some margin to separate from Login button */
+}
+
+.dot {
+    width: 4px;
+    height: 4px;
+    background-color: rgb(69, 69, 69);
+    border-radius: 50%;
+    margin-right: 18px;
+}
+.user {
+  display: flex; /* Keep this to align icon if any text is added later */
+  /* margin-right: 15px; Removed - Bootstrap me-3 on parent handles this */
+  cursor: pointer;
+  color: rgb(69, 69, 69);
+}
+.new {
+  display: flex;
+  font-size: 0.6rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* slide show */
+.slideshow-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 35%;
+  height: 0;
+}
+
+/* Styles for each individual slide image */
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transform: translateX(100%);
+  opacity: 0;
+
+  /* Apply animation for sliding from right to left */
+  animation: slideLeftAnimation 15s infinite;
+  object-fit: cover;
+  vertical-align: middle;
+  filter: brightness(0.85);
+}
+
+/* Animation Keyframes: Slide from Right to Left */
+@keyframes slideLeftAnimation {
+  0% { transform: translateX(100%); opacity: 0; }
+  8% { transform: translateX(0%); opacity: 1; }
+  25% { transform: translateX(0%); opacity: 1; }
+  33% { transform: translateX(-100%); opacity: 0; }
+  100% { transform: translateX(100%); opacity: 0; }
+}
+
+/* Stagger the animations for each slide */
+.slide:nth-child(1) { animation-delay: 0s; }
+.slide:nth-child(2) { animation-delay: 5s; }
+.slide:nth-child(3) { animation-delay: 10s; }
+
+
+/* Optional: Overlay text for slides */
+.slide-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  width: 90%;
+  text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.8);
+  z-index: 1;
+  opacity: 0;
+  animation: textSlideAnimation 15s infinite;
+}
+
+/* Animation for text overlay, moving slightly with the image */
+@keyframes textSlideAnimation {
+  0% { opacity: 0; transform: translate(0%, -50%); }
+  8% { opacity: 1; transform: translate(-50%, -50%); }
+  25% { opacity: 1; transform: translate(-50%, -50%); }
+  33% { opacity: 0; transform: translate(-100%, -50%); }
+  100% { opacity: 0; transform: translate(0%, -50%); }
+}
+
+/* Stagger text animations */
+.slide-text:nth-child(1) { animation-delay: 0s; }
+.slide-text:nth-child(2) { animation-delay: 5s; }
+.slide-text:nth-child(3) { animation-delay: 10s; }
+
+
+
+/* Example main content below the banner */
+.main-content {
+  max-width: 1200px;
+  width: 100%;
+  padding: 2rem;
+  margin-top: 2rem;
+  text-align: center;
+}
+
+/* Responsive adjustments for text size */
+@media (max-width: 768px) {
+  .slide-text {
+      font-size: 2rem;
+  }
+}
+@media (max-width: 480px) {
+  .slide-text {
+      font-size: 1.5rem;
+      padding: 0 1rem;
+  }
+  .slideshow-container {
+      padding-bottom: 50%;
+  }
+}
+.my-fixed-image {
+    width: 416px;
+    height: 277px;
+    object-fit: cover;
+    display: block;
+}
+@media (max-width: 768px) {
+    .my-fixed-image {
+        width: 100%;
+        height: auto;
+        object-fit: unset;
+    }
+}
+
+/* sponsor */
+.image-container {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
+  justify-content: center; /* Center items horizontally */
+  align-items: center; /* Center items vertically */
+  gap: 180px; /* Space between images */
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  max-width: 100%;
+  width: 100%;
+  border: 1px solid gainsboro;
+}
+.image-wrapper {
+  flex-shrink: 0; /* Prevent images from shrinking below their content size */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px; /* Uniform height for all images */
+}
+.image-wrapper img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain; /* Ensures the entire image is visible within its container */
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .image-container {
+      padding: 20px;
+      gap: 30px;
+  }
+  .image-wrapper {
+      height: 60px; /* Smaller height for mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .image-container {
+      gap: 20px;
+  }
+  .image-wrapper {
+      height: 50px; /* Even smaller height for very small screens */
+  }
+}
+/* End sponsor */
+
+/* Start Customer Say Secion */
+
+        /* General Section Styling */
+        .client_section {
+          /* padding-top: 30px;
+          padding-bottom: 10px;
+          background-color: rgb(74, 175, 179);
+          color: #007bff; */
+          padding-bottom: 80px;
+          padding-top: 30px;
+      }
+
+      .client_section .container {
+          max-width: 1328px;
+          margin-left: auto;
+          margin-right: auto;
+          padding-left: 10px;
+          padding-right: 10px;
+          /* background-color: rgb(168, 163, 163); */
+          background-color: #ffffff;
+          border-radius: 10px;
+          padding-top: 5px;
+      }
+
+      .client_section .heading_container {
+          text-align: center;
+          margin-bottom: 40px;
+      }
+
+      .client_section .heading_container h2 {
+          font-size: 2rem; /* Increased for prominence */
+          font-weight: 500; /* Bold */
+          color: #333; /* Dark color for the heading */
+          margin-bottom: 0;
+          padding-top: 25px;
+      }
+
+      /* Specific styles for the psudo_white_primary heading */
+      .client_section .heading_container.psudo_white_primary h2 {
+          color: #ffffff; /* Example: A dark subtle color, adjust as needed */
+      }
+
+      /* Carousel Wrapper */
+      .client_section .carousel-wrap.row {
+          margin: 0; /* Remove default row margins */
+          padding: 0 15px; /* Add padding for content inside carousel wrap */
+      }
+
+      /* Individual Testimonial Item */
+      .client_section .item {
+          padding: 0; /* Owl Carousel handles item spacing with margin option */
+      }
+
+      /* Testimonial Box/Card */
+      .client_section .box {
+          position: relative; /* For absolute positioning of the image */
+          display: flex;
+          flex-direction: column;
+          align-items: center; /* Center content horizontally */
+          /* Default background removed here, Tailwind classes will set individual backgrounds */
+          border-radius: 50px; /* More rounded corners */
+
+          padding: 15px; /* General padding for content */
+          padding-top: 60px; /* Adjusted: Space for the overlapping image at the top */
+          min-height: 200px; /* Adjusted: Ensure consistent height for carousel items */
+          text-align: center;
+          margin-top: 60px; /* Adjusted: Add margin to prevent card from overlapping header */
+          background: linear-gradient(-45deg, #0000cc, #0066ff, #3399ff, #66ccff);
+          background-size: 400% 400%;
+          animation: gradientMove 6s ease infinite;
+          /* color: white; */
+      }
+
+      .client_section .box .detail-box {
+          /* No specific padding here, overall padding is on .box */
+          width: 100%; /* Take full width of parent */
+      }
+
+      .client_section .box .detail-box p {
+          margin-bottom: 0; /* Remove default paragraph margin */
+          font-size: 15px;
+          color: rgb(83, 83, 83); /* Lighter gray for member text */
+      }
+
+      .client_section .box .detail-box h6 {
+          font-weight: 600; /* Bold for name */
+          font-size: 18px; /* Adjusted: Smaller name font */
+          margin: 10px 0; /* Spacing for the client name */
+          color: rgb(240, 61, 61); /* Highlight name with brand color */
+      }
+
+      /* Image Box - positioned at the top */
+      .client_section .box .img-box {
+          position: absolute;
+          left: 50%;
+          top: 0; /* Position at the top edge of the card */
+          transform: translateX(-50%) translateY(-50%); /* Center horizontally and pull up by half its height */
+          z-index: 10; /* Ensure it's above the card content */
+          width: 120px; /* Diameter of the circle image */
+          height: 120px; /* Diameter of the circle image */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          /* No margin-bottom or margin-top here, positioning is absolute */
+      }
+
+      .client_section .box .img-box img {
+          width: 100%; /* Image takes full width of its container */
+          height: 100%; /* Image takes full height of its container */
+          border-radius: 50%; /* Make the image perfectly circular */
+          border: 2px solid #ffffff; /* White border as per image */
+          object-fit: cover; /* Ensures image fills the circle without distortion */
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow for the image */
+          background-color: #f8f8f8; /* Background for placeholder in case image fails */
+      }
+
+      /* Text below image */
+      .client_section .box .detail-box .mt-5 {
+          margin-top: 15px; /* Adjust spacing for "Good services!" text after the name */
+          font-size: 0.95rem; /* Adjusted: Slightly smaller font size */
+          line-height: 1.5;
+      }
+
+
+      /* Owl Carousel Navigation Arrows */
+      .client_section .owl-carousel .owl-nav {
+          display: flex;
+          justify-content: center;
+          margin-top: 25px;
+          padding: 0; /* Remove default padding */
+      }
+
+      .client_section .owl-carousel .owl-nav .owl-prev,
+      .client_section .owl-carousel .owl-nav .owl-next {
+          width: 40px; /* Larger buttons */
+          height: 40px;
+          background-color: #007bff; /* Blue for arrows */
+          color: #ffffff;
+          font-size: 28px; /* Larger arrow icon */
+          border-radius: 50%;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          cursor: pointer;
+          transition: background-color 0.3s ease, transform 0.2s ease;
+          margin: 0 10px; /* Spacing between arrows and dots */
+      }
+
+      .client_section .owl-carousel .owl-nav .owl-prev:hover,
+      .client_section .owl-carousel .owl-nav .owl-next:hover {
+          background-color: #0056b3; /* Darker blue on hover */
+          transform: scale(1.05);
+      }
+
+      /* Owl Carousel Dots */
+      .client_section .owl-carousel .owl-dots {
+          text-align: center;
+          margin-top: 15px; /* Space below items or nav */
+      }
+
+      .client_section .owl-carousel .owl-dots .owl-dot {
+          width: 12px;
+          height: 12px;
+          background-color: #ccc; /* Inactive dot color */
+          border-radius: 50%;
+          display: inline-block;
+          margin: 0 5px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+          margin-bottom: 20px;
+      }
+
+      .client_section .owl-carousel .owl-dots .owl-dot.active {
+          background-color: #007bff; /* Active dot color */
+      }
+
+      /* Responsive adjustments */
+      @media (max-width: 768px) {
+          .client_section .box {
+              margin-top: 60px; /* Adjust top margin for smaller screens */
+              min-height: 280px;
+          }
+          .client_section .box .img-box {
+              width: 100px;
+              height: 100px;
+          }
+          .client_section .box .detail-box h6 {
+              font-size: 22px; /* Further adjust for smaller screens */
+          }
+          .client_section .box .detail-box .mt-5 {
+              margin-top: 10px;
+              font-size: 0.9rem;
+          }
+      }
+
+      @media (max-width: 480px) {
+          .client_section .heading_container h2 {
+              font-size: 2rem;
+          }
+          .client_section .box {
+              padding-top: 60px;
+          }
+      }
+
+/* End Customer Section */
+
+/* Custom styles for the navigation icons/login/dots */
+/* This is the new flex container for search, icons, login, and dots */
+.custom-nav-icons {
+    gap: 1.5rem; /* Adjust overall spacing between grouped items */
+    flex-wrap: nowrap; /* Prevent wrapping unless explicitly desired */
+}
+
+/* Adjust search container width for responsiveness */
+@media (min-width: 992px) { /* On larger screens like laptops */
+    .search-container {
+        width: 300px; /* Adjust as needed for 15-inch laptops */
+        max-width: 350px;
+    }
+}
+@media (max-width: 991.98px) { /* Below large breakpoint, for smaller laptops and tablets */
+    .custom-nav-icons {
+        width: 100%; /* Take full width when collapsed */
+        justify-content: center; /* Center content when collapsed */
+        margin-top: 15px; /* Add some space above when collapsed */
+        flex-wrap: wrap; /* Allow wrapping on smaller screens if items don't fit */
+        gap: 1rem; /* Adjust gap when wrapped */
+    }
+    .search-container {
+        width: 80%; /* Adjust search bar width to be more fluid */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .order, .user, .login, .dot-container {
+        margin: 5px; /* Add some margin when wrapped to prevent sticking */
+    }
+}
+@media (max-width: 767.98px) { /* For tablets and smaller */
+  .search-container {
+      width: 100%;
+  }
+}
+@media (max-width: 575.98px) { /* For mobile phones */
+    .search-container {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .custom-nav-icons {
+        flex-direction: column; /* Stack icons vertically on very small screens */
+        align-items: center;
+    }
+    .order, .user, .login, .dot-container {
+        width: 100%; /* Make them take full width when stacked */
+        justify-content: center; /* Center their content */
+        margin: 5px 0; /* Vertical margin */
+    }
+    .login {
+        margin: 0; /* Remove horizontal margin for login button when stacked */
+    }
+}

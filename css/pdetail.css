@@ -1,0 +1,75 @@
+/* --- Centering the Main Laptop Image --- */
+.main-product-display {
+  display: flex; /* Enable Flexbox */
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically (if the container has a defined height) */
+  padding: 10px 0; /* Add some vertical spacing */
+  min-height: 250px; /* Give it a minimum height to make vertical centering visible */
+  /* background-color: #f8f9fa; /* Optional: for visual debugging of the container */
+}
+.modal-title {
+  margin-left: 25px;
+}
+.product-title {
+  display: flex;
+  text-align: start;
+}
+
+.main-product-display img {
+  max-width: 100%; /* Ensure the image doesn't overflow its container */
+  height: auto;    /* Maintain aspect ratio */
+  display: block;  /* Ensures it behaves like a block element within flexbox for better control */
+}
+
+/* --- Centering the Product Name (Macbook Air M3 Chip) --- */
+.product-info-column .product-title { /* Target the H4 directly within its column */
+  text-align: center;
+}
+
+/* Optional: Center other elements if desired within the info column */
+.product-info-column .stars-rating {
+  justify-content: center !important; /* Override Bootstrap's justify-content-start */
+}
+
+.product-info-column .add-to-cart-section {
+  justify-content: center; /* Center the input and button row */
+}
+
+/* If you want the Price, Status, Quantity, etc., to be centered too: */
+.product-info-column > div,
+.product-info-column > p {
+  text-align: start;
+}
+
+/* But usually, product details are left-aligned, so you might only want to center specific elements */
+/* If you apply text-align: center to the whole .product-info-column, then override for details: */
+/* .product-info-column {
+  text-align: center;
+}
+.product-info-column p,
+.product-info-column div:not(.social-icons) {
+  text-align: left;
+} */
+
+/* --- Styles for the Modal Header --- */
+.modal-header {
+  display: flex;          /* Ensure Flexbox is active (Bootstrap already does this) */
+  justify-content: flex-start; /* Align items to the start (left) initially */
+  align-items: center;    /* Vertically center items in the header */
+  gap: 1px;              /* Add a specific gap between header elements (e.g., title and button) */
+  /* You might want to ensure default padding is still applied if you previously overrode it */
+  padding-right: 2rem; /* Standard Bootstrap modal header padding (top, right, bottom, left) */
+
+}
+
+/* Target the close button specifically within the modal header */
+.modal-header .btn-close {
+  margin-left: auto;      /* This is the key: pushes the button to the far right within the flex container */
+  /* You can also add a small margin-right to pull it away from the very edge if needed */
+  /* margin-right: 2px; */
+}
+
+/* Ensure the title itself doesn't have extra bottom margin pushing things down */
+.modal-header .modal-title {
+  margin-bottom: 0; /* Remove default bottom margin from h4/h5 */
+}
